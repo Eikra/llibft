@@ -1,41 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iecharak <iecharak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/08 00:18:47 by iecharak          #+#    #+#             */
-/*   Updated: 2022/10/23 14:28:37 by iecharak         ###   ########.fr       */
+/*   Created: 2022/10/24 22:20:21 by iecharak          #+#    #+#             */
+/*   Updated: 2022/10/26 00:36:36 by iecharak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+t_list	*ft_lstnew(void *content)
 {
-	unsigned int	i;
-	unsigned int	j;
-	char			*c;
+	t_list *frst_list;
 
-	c = (char *)malloc(ft_strlen(s1) + ft_strlen(s2) + 2);
-	if (!c)
+	if (!(frst_list = malloc(sizeof(t_list))))
 		return (NULL);
-	i = 0;
-	j = 0;
-	while (s1[i])
-	{
-		c[j] = s1[i];
-		j++;
-		i++;
-	}
-	i = 0;
-	while (s2[i])
-	{
-		c[j] = s2[i];
-		j++;
-		i++;
-	}
-	c[j] = '\0';
-	return (c);
+	frst_list->content = content;
+	frst_list->next = NULL;
+	return (frst_list);
 }

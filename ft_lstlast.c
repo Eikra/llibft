@@ -1,41 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iecharak <iecharak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/08 00:18:47 by iecharak          #+#    #+#             */
-/*   Updated: 2022/10/23 14:28:37 by iecharak         ###   ########.fr       */
+/*   Created: 2022/10/25 05:01:41 by iecharak          #+#    #+#             */
+/*   Updated: 2022/10/26 13:55:57 by iecharak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+t_list	*ft_lstlast(t_list *lst)
 {
-	unsigned int	i;
-	unsigned int	j;
-	char			*c;
-
-	c = (char *)malloc(ft_strlen(s1) + ft_strlen(s2) + 2);
-	if (!c)
-		return (NULL);
-	i = 0;
-	j = 0;
-	while (s1[i])
+	while (lst)
 	{
-		c[j] = s1[i];
-		j++;
-		i++;
+		if (!lst->next)
+			return (lst);
+		lst = lst->next;
 	}
-	i = 0;
-	while (s2[i])
-	{
-		c[j] = s2[i];
-		j++;
-		i++;
-	}
-	c[j] = '\0';
-	return (c);
+	return (NULL);
 }
+/*
+{
+	if (!lst)
+		return (NULL);
+	while (lst->next)
+		lst = lst->next;
+	return (lst);
+}
+int	main(void)
+{
+	t_list *head;
+
+	head = ft_lstnew("Hello");
+	head->next = ft_lstnew("WORLD");
+	
+}*/

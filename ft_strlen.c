@@ -6,7 +6,7 @@
 /*   By: iecharak <iecharak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 19:34:07 by iecharak          #+#    #+#             */
-/*   Updated: 2022/10/17 21:43:54 by iecharak         ###   ########.fr       */
+/*   Updated: 2022/10/23 01:39:41 by iecharak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ size_t	ft_strlen(const char *s)
 	size_t	len;
 
 	len = 0;
-	if (!s)
-		return (0);
-	while (s[len])
+	/*if (!s)
+		return (0);*/
+	while (s[len] != '\0')
 		len++;
 	return (len);
-}	
+}

@@ -6,7 +6,7 @@
 /*   By: iecharak <iecharak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 15:12:53 by iecharak          #+#    #+#             */
-/*   Updated: 2022/10/21 19:29:54 by iecharak         ###   ########.fr       */
+/*   Updated: 2022/10/23 04:10:54 by iecharak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,16 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
 	size_t	i;
 	size_t	j;
-	size_t	n_len;
 
-	n_len = ft_strlen(needle);
 	i = 0;
 	if (!needle[0])
-		return ((char *)"");
-	while ((char )haystack[i] && i < len)
+		return ((char *)haystack);
+	if (len > ft_strlen(haystack))
+		len = ft_strlen(haystack);
+	while ((char)haystack[i] && i < len)
 	{
 		j = 0;
-		if ((char )haystack[i + j] == needle[j])
+		if ((char)haystack[i + j] == needle[j])
 		{
 			while ((char)haystack[i + j] == needle[j] && i + j < len)
 			{
@@ -73,10 +73,10 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 /*if(!needle)
         return ((char*)haystack);*/
 /*if (!ft_isprint(needle[i]))
-	 	return((char*)"");*/
+			return((char*)"");*/
 /*#include<string.h>
 
-int main()
+int	main(void)
 {
     printf("%s\n", ft_strnstr(NULL, NULL, 3));
 }*/

@@ -6,7 +6,7 @@
 /*   By: iecharak <iecharak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 18:30:16 by iecharak          #+#    #+#             */
-/*   Updated: 2022/10/20 21:54:40 by iecharak         ###   ########.fr       */
+/*   Updated: 2022/10/25 05:32:45 by iecharak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,21 @@ void	*ft_memmove(void *dst, const void *src, size_t n)
 {
 	unsigned char	*d;
 	unsigned char	*s;
-	int				i;
+	size_t			i;
 
+	if (src == 0 && dst == 0)
+		return ((void *)0);
 	i = n - 1;
 	d = (unsigned char *)dst;
 	s = (unsigned char *)src;
-	while (n-- > 0)
-	{
-		d[i] = s[i];
-		i--;
-	}
+	if (d > s)
+		while (n > 0)
+		{
+			d[i] = s[i];
+			n--;
+			i--;
+		}
+	else
+		return (ft_memcpy(dst, src, n));
 	return (dst);
 }
