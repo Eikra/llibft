@@ -6,76 +6,50 @@
 /*   By: iecharak <iecharak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 21:41:25 by iecharak          #+#    #+#             */
-/*   Updated: 2022/10/25 05:31:01 by iecharak         ###   ########.fr       */
+/*   Updated: 2022/10/28 14:43:43 by iecharak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	get_start_index(char const *s1, char const *set)
+int is_in_set(char const *set, int c)
 {
-	int	i;
-	int	j;
-
-	i = 0;
-	j = 0;
-	while (s1[i] && set[j])
-	{
-		if (s1[i] == set[j])
-		{
-			i++;
-			j = 0;
-		}
-		else
-			j++;
-	}
-	return (i);
+    int i;
+    i = 0;
+    while(set[i])
+    {
+        if (set[i] == c)
+            return(1);
+        i++;
+    }
+    return (0);
 }
-
-static int	get_end_index(char const *s1, char const *set)
+char    *ft_strtrim(char const *s1, char const *set)
 {
-	int	i;
-	int	j;
+    char *strtrim;
+    size_t  strt;
+    size_t  end;
+    size_t  i;
+    size_t  n_len;
 
-	i = 0;
-	j = 0;
-	i = ft_strlen(s1) - 1;
-	j = 0;
-	while (i > 0 && set[j])
-	{
-		if (s1[i] == set[j])
-		{
-			i--;
-			j = 0;
-		}
-		else
-			j++;
-	}
-	return (i);
-}
-
-char	*ft_strtrim(char const *s1, char const *set)
-{
-	int k;
-	char *cpy;
-	int start;
-	int end;
-	int size;
-
-	if (!s1)
-		return (NULL);
-	k = 0;
-	start = get_start_index(s1, set);
-	end = get_end_index(s1, set);
-	if (end > start)
-		size = end - start + 1;
-	else
-		size = 0;
-	cpy = malloc(size + 1);
-	if (!cpy)
-		return (0);
-	while (start <= end)
-		cpy[k++] = s1[start++];
-	cpy[k] = '\0';
-	return (cpy);
+    i = 0;
+    end = ft_strlen(s1)-1;
+    if (!s1 || !set)
+        return (NULL);
+    while (s1[i] && is_in_set(set, s1[i]) && i <= end)
+    {
+        i++;
+    }
+    strt = i;
+    
+    while (s1[end] && is_in_set(set, s1[end]) && end >= 0)
+    {
+            end--;
+    }
+    if (strt == end)
+        n_len = 2;
+    else 
+        n_len = end - strt + 2;
+    ft_strlcpy(strtrim, s1 + strt, n_len);
+    return (strtrim);
 }

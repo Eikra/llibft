@@ -1,43 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear_bonus.c                                :+:      :+:    :+:   */
+/*   ft_lstiter_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iecharak <iecharak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/26 14:25:39 by iecharak          #+#    #+#             */
-/*   Updated: 2022/10/28 12:46:48 by iecharak         ###   ########.fr       */
+/*   Created: 2022/10/26 16:08:58 by iecharak          #+#    #+#             */
+/*   Updated: 2022/10/28 14:30:19 by iecharak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
 /*void	del(void *content)
 {
-	content = NULL;
+	content = ft_memset(content, 'a', 4);
 }*/
-void	ft_lstclear(t_list **lst, void (*del)(void *))
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	t_list	*temp;
-
-	if (lst && del)
-		while (*lst != NULL)
+	if (lst && f)
+		while (lst != NULL)
 		{
-			temp = (*lst)->next;
-			ft_lstdelone(*lst, (*del));
-			*lst = temp;
+			f(lst->content);
+			lst = (lst)->next;
 		}
 }
 /*int	main(void)
 {
-	t_list *lst;
-	t_list *new;
-	t_list *head;
-	t_list *temp;
+	t_list	*lst;
+	t_list	*new;
+	t_list	*head;
+	t_list	*temp;
 
-	lst = ft_lstnew(ft_strdup("hello"));
-	new = ft_lstnew(ft_strdup("world"));
+	lst = ft_lstnew(ft_strdup("abcd"));
+	new = ft_lstnew(ft_strdup("efgh"));
 	head = lst;
-
 	ft_lstadd_back(&lst, new);
 	temp = head;
 	while (temp)
@@ -45,11 +42,9 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 		printf("%s\n", temp->content);
 		temp = temp->next;
 	}
-
 	printf("---------------- \n");
-
-	ft_lstclear(&lst, del);
-
+	temp = head;
+	ft_lstiter(lst, del);
 	temp = head;
 	while (temp)
 	{

@@ -6,7 +6,7 @@
 /*   By: iecharak <iecharak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 12:49:52 by iecharak          #+#    #+#             */
-/*   Updated: 2022/10/21 18:23:23 by iecharak         ###   ########.fr       */
+/*   Updated: 2022/10/28 10:48:11 by iecharak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	f(unsigned int n, char c);
 
-void	ft_striteri(char *s, void ( *f) (unsigned int, char *))
+void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
 	unsigned int	i;
 

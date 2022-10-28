@@ -6,7 +6,7 @@
 /*   By: iecharak <iecharak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 05:01:41 by iecharak          #+#    #+#             */
-/*   Updated: 2022/10/26 13:55:57 by iecharak         ###   ########.fr       */
+/*   Updated: 2022/10/28 14:09:55 by iecharak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,17 @@ t_list	*ft_lstlast(t_list *lst)
 	while (lst->next)
 		lst = lst->next;
 	return (lst);
-}
-int	main(void)
+}*/
+/*int	main(void)
 {
-	t_list *head;
+	t_list *frst;
+	t_list *scnd;
+	t_list *thrd;
 
-	head = ft_lstnew("Hello");
-	head->next = ft_lstnew("WORLD");
-	
+	frst = ft_lstnew("hello");
+	scnd = ft_lstnew("wold");
+	thrd = ft_lstnew("hi");
+	ft_lstadd_front(&thrd, scnd);
+	ft_lstadd_front(&scnd, frst);
+	printf("%s", ft_lstlast(frst)->content);
 }*/
