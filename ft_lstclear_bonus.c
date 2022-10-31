@@ -6,7 +6,7 @@
 /*   By: iecharak <iecharak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 14:25:39 by iecharak          #+#    #+#             */
-/*   Updated: 2022/10/28 12:46:48 by iecharak         ###   ########.fr       */
+/*   Updated: 2022/10/30 22:41:41 by iecharak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,14 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 	t_list	*temp;
 
 	if (lst && del)
-		while (*lst != NULL)
+	{
+		while (*lst)
 		{
 			temp = (*lst)->next;
 			ft_lstdelone(*lst, (*del));
 			*lst = temp;
 		}
+	}
 }
 /*int	main(void)
 {

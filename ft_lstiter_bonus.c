@@ -6,7 +6,7 @@
 /*   By: iecharak <iecharak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 16:08:58 by iecharak          #+#    #+#             */
-/*   Updated: 2022/10/28 14:30:19 by iecharak         ###   ########.fr       */
+/*   Updated: 2022/10/30 22:36:44 by iecharak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,13 @@
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
 	if (lst && f)
+	{
 		while (lst != NULL)
 		{
 			f(lst->content);
 			lst = (lst)->next;
 		}
+	}
 }
 /*int	main(void)
 {

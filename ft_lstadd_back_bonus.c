@@ -1,31 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_lstadd_back_bonus.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iecharak <iecharak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/24 22:20:21 by iecharak          #+#    #+#             */
-/*   Updated: 2022/10/27 14:46:34 by iecharak         ###   ########.fr       */
+/*   Created: 2022/10/25 21:31:40 by iecharak          #+#    #+#             */
+/*   Updated: 2022/10/30 22:32:23 by iecharak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstnew(void *content)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	t_list	*frst_list;
-
-	if (!(frst_list = malloc(sizeof(t_list))))
-		return (NULL);
-	frst_list->content = content;
-	frst_list->next = NULL;
-	return (frst_list);
+	if (*lst)
+		ft_lstlast(*lst)->next = new;
+	else
+		*lst = new;
 }
-/*#include <stdio.h>
-int	main(void)
+/*int	main(void)
 {
-	t_list *node;
-	node = ft_lstnew("hello");
-	printf("%s", node->content);
+	t_list *lst;
+	t_list *new;
+
+	lst = ft_lstnew("wold");
+	new = ft_lstnew("hello");
+	ft_lstadd_back(&lst, new);
+	printf("%s\n", lst->content);
+	printf("%s\n", lst->next->content);
 }*/

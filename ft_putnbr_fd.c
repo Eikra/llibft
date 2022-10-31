@@ -6,7 +6,7 @@
 /*   By: iecharak <iecharak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 23:53:15 by iecharak          #+#    #+#             */
-/*   Updated: 2022/10/21 18:54:08 by iecharak         ###   ########.fr       */
+/*   Updated: 2022/10/31 17:40:16 by iecharak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,6 @@ void	ft_putnbr_fd(int n, int fd)
 }
 /*int main()
 {
-  int fd = open("tripouille", O_RDWR | O_CREAT, 0777);
+  int fd = open("tripouille", O_RDWR | O_CREAT, 777);
 ft_putnbr_fd(-42, fd);
 }*/

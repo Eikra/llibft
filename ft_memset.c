@@ -6,7 +6,7 @@
 /*   By: iecharak <iecharak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 19:43:42 by iecharak          #+#    #+#             */
-/*   Updated: 2022/10/23 02:13:04 by iecharak         ###   ########.fr       */
+/*   Updated: 2022/10/30 22:44:04 by iecharak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@ void	*ft_memset(void *b, int c, size_t len)
 {
 	void	*o_dest;
 
-	/*if (!b)
-		return (NULL);*/
 	o_dest = b;
 	while (len > 0)
 	{
