@@ -6,7 +6,7 @@
 /*   By: iecharak <iecharak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 12:35:12 by iecharak          #+#    #+#             */
-/*   Updated: 2022/10/24 21:43:05 by iecharak         ###   ########.fr       */
+/*   Updated: 2022/11/01 22:40:43 by iecharak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	if (c == 0)
+	if ((char)c == 0)
 		return ((char *)s + ft_strlen(s));
 	while (*s)
 	{

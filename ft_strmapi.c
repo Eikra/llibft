@@ -6,7 +6,7 @@
 /*   By: iecharak <iecharak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 10:50:16 by iecharak          #+#    #+#             */
-/*   Updated: 2022/10/21 19:03:53 by iecharak         ###   ########.fr       */
+/*   Updated: 2022/11/02 01:13:53 by iecharak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
     c += n;
 }*/
 
-void	f(unsigned int n, char c);
+char	f(unsigned int n, char c);
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
@@ -24,6 +24,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	unsigned int	i;
 
 	i = 0;
+	if (!s || !f)
+		return (NULL);
 	str = malloc((ft_strlen(s) + 1) * sizeof(char));
 	if (!str)
 		return (NULL);

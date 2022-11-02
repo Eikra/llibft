@@ -6,7 +6,7 @@
 /*   By: iecharak <iecharak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 21:41:25 by iecharak          #+#    #+#             */
-/*   Updated: 2022/10/30 21:22:47 by iecharak         ###   ########.fr       */
+/*   Updated: 2022/11/01 23:03:53 by iecharak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	int		j;
 
 	i = 0;
+	if (!s1 || !set)
+		return (NULL);
 	j = ft_strlen(s1) - 1;
 	while (s1[i] && ft_strchr(set, s1[i]))
 		i++;

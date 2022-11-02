@@ -6,33 +6,17 @@
 /*   By: iecharak <iecharak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 23:09:00 by iecharak          #+#    #+#             */
-/*   Updated: 2022/10/23 05:03:47 by iecharak         ###   ########.fr       */
+/*   Updated: 2022/11/02 00:18:59 by iecharak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_substr_ft(char *substr, char const *s, unsigned int start,
+		size_t sub_len)
 {
-	unsigned int i;
-	size_t sub_len;
-	char *substr;
+	unsigned int	i;
 
-	if (!s)
-		return (NULL);
-	if (ft_strlen(s) < start)
-	{
-		if (!(substr = malloc(sizeof(char) * 1)))
-			return (NULL);
-		substr[0] = '\0';
-		return (substr);
-	}
-	if (len > (ft_strlen(s) - start))
-		sub_len = ft_strlen(s) - start;
-	if (len <= (ft_strlen(s) - start))
-		sub_len = len;
-	if (!(substr = (char *)malloc(sub_len + 1)))
-		return (NULL);
 	i = 0;
 	while (i < sub_len && s[start + i])
 	{
@@ -41,4 +25,29 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	}
 	substr[i] = '\0';
 	return (substr);
+}
+
+char	*ft_substr(char const *s, unsigned int start, size_t len)
+{
+	size_t	sub_len;
+	char	*substr;
+
+	if (!s)
+		return (NULL);
+	if (ft_strlen(s) < start)
+	{
+		substr = malloc(sizeof(char) * 1);
+		if (!substr)
+			return (NULL);
+		substr[0] = '\0';
+		return (substr);
+	}
+	if (len > (ft_strlen(s) - start))
+		sub_len = ft_strlen(s) - start;
+	if (len <= (ft_strlen(s) - start))
+		sub_len = len;
+	substr = (char *)malloc(sub_len + 1);
+	if (!substr)
+		return (NULL);
+	return (ft_substr_ft(substr, s, start, sub_len));
 }

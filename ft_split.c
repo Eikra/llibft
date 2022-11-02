@@ -6,7 +6,7 @@
 /*   By: iecharak <iecharak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 10:48:17 by iecharak          #+#    #+#             */
-/*   Updated: 2022/10/30 22:50:38 by iecharak         ###   ########.fr       */
+/*   Updated: 2022/11/02 00:02:20 by iecharak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ size_t	count_word(char const *s, int c)
 	count = 0;
 	i = 0;
 	done_null = 1;
-	while (i < strlen(s))
+	while (i < ft_strlen(s))
 	{
 		if (s[i] != c && s[i] && done_null > 0)
 		{
@@ -68,19 +68,15 @@ char	**ft_free(char **s, int i)
 	return (NULL);
 }
 
-char	**ft_split(char const *s, char c)
+char	**ft_spliter(char **tab, char const *s, char c)
 {
-	char	**tab;
 	size_t	i;
 	size_t	j;
 	size_t	start;
 
-	tab = malloc(sizeof(char *) * (count_word(s, c) + 1));
-	if (!tab || !s)
-		return (NULL);
 	j = 0;
 	i = -1;
-	while (++i < strlen(s))
+	while (++i < ft_strlen(s))
 	{
 		start = i;
 		while (s[i] != c && s[i])
@@ -91,11 +87,24 @@ char	**ft_split(char const *s, char c)
 				if (tab[j] == NULL)
 					return (ft_free(tab, j));
 				j++;
-			}	
+			}
 			i++;
 		}
 	}
 	tab[j] = 0;
+	return (tab);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	char	**tab;
+
+	if (!s)
+		return (NULL);
+	tab = malloc(sizeof(char *) * (count_word(s, c) + 1));
+	if (!tab)
+		return (NULL);
+	tab = ft_spliter(tab, s, c);
 	return (tab);
 }
 /*int main()

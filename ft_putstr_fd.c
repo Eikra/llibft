@@ -6,7 +6,7 @@
 /*   By: iecharak <iecharak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 23:37:39 by iecharak          #+#    #+#             */
-/*   Updated: 2022/10/22 12:48:44 by iecharak         ###   ########.fr       */
+/*   Updated: 2022/11/01 23:13:55 by iecharak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	ft_putstr_fd(char *s, int fd)
 	int	i;
 
 	i = 0;
+	if (!s)
+		return ;
 	while (s[i])
 	{
 		ft_putchar_fd(s[i], fd);
@@ -25,14 +27,16 @@ void	ft_putstr_fd(char *s, int fd)
 }
 /*#include <stdio.h> 
 #include <fcntl.h>
-int main()
+int	main(void)
 {
-  int fd = open("ikrame", O_RDWR | O_CREAT, 0777);
+	int	fd;
+
+  fd = open("ikrame", O_RDWR | O_CREAT, 0777);
 ft_putstr_fd("echaraki", fd);
 close (fd);
 printf("Done");
 }
-int	main()
+int	main(void)
 {
 	int	fd;
 
