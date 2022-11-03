@@ -6,7 +6,7 @@
 /*   By: iecharak <iecharak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 15:12:53 by iecharak          #+#    #+#             */
-/*   Updated: 2022/11/02 00:25:47 by iecharak         ###   ########.fr       */
+/*   Updated: 2022/11/03 19:06:28 by iecharak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,43 +38,3 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	}
 	return (NULL);
 }
-/*char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
-{
-	size_t	i;
-	size_t	j;
-	size_t	n_len;
-	char	*str;
-
-	str = (char *)haystack;
-	n_len = ft_strlen(needle);
-	i = 0;
-	if (!needle[0])
-		return ((char *)"");
-	while (str[i] && i < len)
-	{
-		j = 0;
-		if (str[i + j] == needle[j])
-		{
-			while (str[i + j] == needle[j] && j < n_len && (i + j) < len)
-			{
-				j++;
-			}
-			if (needle[j] == '\0')
-			{
-				return (str + i);
-			}
-		}
-		i++;
-	}
-	return (NULL);
-}*/
-/*if(!needle)
-        return ((char*)haystack);*/
-/*if (!ft_isprint(needle[i]))
-			return((char*)"");*/
-/*#include<string.h>
-
-int	main(void)
-{
-    printf("%s\n", ft_strnstr(NULL, NULL, 3));
-}*/

@@ -6,7 +6,7 @@
 /*   By: iecharak <iecharak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 17:25:16 by iecharak          #+#    #+#             */
-/*   Updated: 2022/11/03 18:54:30 by iecharak         ###   ########.fr       */
+/*   Updated: 2022/11/03 19:04:06 by iecharak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,3 @@ void	*ft_calloc(size_t count, size_t size)
 	t = size * count;
 	return (ft_memset(p, 0, t));
 }
-
-/*int	main(void)
-{
-	printf("%p\n", ft_calloc(9,9));
-	printf("%zu", SIZE_MAX);
-}*/

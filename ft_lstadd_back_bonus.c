@@ -6,7 +6,7 @@
 /*   By: iecharak <iecharak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 21:31:40 by iecharak          #+#    #+#             */
-/*   Updated: 2022/10/30 22:32:23 by iecharak         ###   ########.fr       */
+/*   Updated: 2022/11/03 19:04:28 by iecharak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,3 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 	else
 		*lst = new;
 }
-/*int	main(void)
-{
-	t_list *lst;
-	t_list *new;
-
-	lst = ft_lstnew("wold");
-	new = ft_lstnew("hello");
-	ft_lstadd_back(&lst, new);
-	printf("%s\n", lst->content);
-	printf("%s\n", lst->next->content);
-}*/

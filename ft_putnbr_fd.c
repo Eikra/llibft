@@ -6,16 +6,11 @@
 /*   By: iecharak <iecharak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 23:53:15 by iecharak          #+#    #+#             */
-/*   Updated: 2022/10/31 17:40:16 by iecharak         ###   ########.fr       */
+/*   Updated: 2022/11/03 19:05:38 by iecharak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-/*#include <unistd.h>
-#include "libft.h"
-#include <sys/stat.h>
-#include <fcntl.h>
-#include <unistd.h>*/
 
 void	ft_putnbr_fd(int n, int fd)
 {
@@ -39,8 +34,3 @@ void	ft_putnbr_fd(int n, int fd)
 		ft_putnbr_fd(n % 10, fd);
 	}
 }
-/*int main()
-{
-  int fd = open("tripouille", O_RDWR | O_CREAT, 777);
-ft_putnbr_fd(-42, fd);
-}*/

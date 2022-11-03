@@ -6,7 +6,7 @@
 /*   By: iecharak <iecharak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 10:48:17 by iecharak          #+#    #+#             */
-/*   Updated: 2022/11/02 00:02:20 by iecharak         ###   ########.fr       */
+/*   Updated: 2022/11/03 19:02:17 by iecharak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,17 +107,3 @@ char	**ft_split(char const *s, char c)
 	tab = ft_spliter(tab, s, c);
 	return (tab);
 }
-/*int main()
-{
-  char  str[16] = "aa,,bb,,cc,,,dd";
-    char **tab;
-  
-    tab = ft_split(str, ',');
-    int i = 0;
-    while(i < 5)
-    {
-       printf("%s\n", tab[i]);
-       i++;
-    }
-    return(0);
-}*/

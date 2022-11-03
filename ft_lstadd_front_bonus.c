@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
+/*   ft_lstadd_front_bonus.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iecharak <iecharak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 02:12:15 by iecharak          #+#    #+#             */
-/*   Updated: 2022/10/27 17:05:18 by iecharak         ###   ########.fr       */
+/*   Updated: 2022/11/03 19:00:23 by iecharak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,15 +24,3 @@ void	ft_lstadd_front(t_list **lst, t_list *new)
 	new->next = *lst;
 	*lst = new;
 }
-/*#include <stdio.h>
-int	main(void)
-{
-	t_list *new;
-	t_list *lst;
-
-	new = ft_lstnew("hello");
-	lst = ft_lstnew("wold");
-	ft_lstadd_front(&lst, new);
-	printf("%s\n", new->content);
-	printf("%s\n", new->next->content);
-}*/

@@ -6,7 +6,7 @@
 /*   By: iecharak <iecharak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 10:50:16 by iecharak          #+#    #+#             */
-/*   Updated: 2022/11/02 01:13:53 by iecharak         ###   ########.fr       */
+/*   Updated: 2022/11/03 19:02:41 by iecharak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,3 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	str[i] = '\0';
 	return (str);
 }
-/*int main()
-{
-    char s []="ABCD";
-    char    *s1 = ft_strmapi(s, f);
-    printf("%s", s1);
-}*/
