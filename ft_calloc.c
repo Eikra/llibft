@@ -6,7 +6,7 @@
 /*   By: iecharak <iecharak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 17:25:16 by iecharak          #+#    #+#             */
-/*   Updated: 2022/11/01 22:31:03 by iecharak         ###   ########.fr       */
+/*   Updated: 2022/11/03 18:54:30 by iecharak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	*ft_calloc(size_t count, size_t size)
 	char	*p;
 	size_t	t;
 
+	if (size && count > SIZE_MAX / size)
+		return (NULL);
 	p = malloc(size * count);
 	if (!p)
 		return (NULL);

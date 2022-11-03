@@ -6,13 +6,12 @@
 #    By: iecharak <iecharak@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/07 19:32:41 by iecharak          #+#    #+#              #
-#    Updated: 2022/10/30 22:20:48 by iecharak         ###   ########.fr        #
+#    Updated: 2022/11/03 04:32:41 by iecharak         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 CFLAGS = -Wall -Werror -Wextra
-CC = gcc 
 RM = rm -rf
 SRC = ft_atoi.c       ft_isalpha.c    ft_memchr.c     ft_memset.c     ft_putstr_fd.c  ft_strlcat.c    ft_strnstr.c    ft_tolower.c \
 		ft_bzero.c      ft_isascii.c    ft_memcmp.c     ft_putchar_fd.c ft_strchr.c     ft_strlcpy.c    ft_strrchr.c    ft_toupper.c\

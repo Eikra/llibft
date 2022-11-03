@@ -6,7 +6,7 @@
 /*   By: iecharak <iecharak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 13:04:00 by iecharak          #+#    #+#             */
-/*   Updated: 2022/10/23 03:19:12 by iecharak         ###   ########.fr       */
+/*   Updated: 2022/11/03 04:29:44 by iecharak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	size_t	i;
 
 	i = 0;
+	if (n == 0)
+		return (0);
 	while ((s1[i] || s2[i]) && i < n)
 	{
 		if (s1[i] != s2[i])

@@ -6,7 +6,7 @@
 /*   By: iecharak <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 18:30:16 by iecharak          #+#    #+#             */
-/*   Updated: 2022/10/20 21:51:24 by iecharak         ###   ########.fr       */
+/*   Updated: 2022/11/03 04:30:59 by iecharak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 
 	if (src == 0 && dst == 0)
 		return ((void *)0);
+	if (dst == src)
+		return (dst);
 	o_dest = dst;
 	while (n > 0)
 	{
